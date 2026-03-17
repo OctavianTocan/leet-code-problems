@@ -6,7 +6,12 @@ test("two courses, one prerequisite — can finish", () => {
 });
 
 test("two courses, circular dependency — cannot finish", () => {
-    expect(canFinish(2, [[1, 0], [0, 1]])).toBe(false);
+    expect(
+        canFinish(2, [
+            [1, 0],
+            [0, 1],
+        ]),
+    ).toBe(false);
 });
 
 test("no prerequisites — can finish", () => {
@@ -18,9 +23,21 @@ test("single course — can finish", () => {
 });
 
 test("chain of prerequisites — can finish", () => {
-    expect(canFinish(4, [[1, 0], [2, 1], [3, 2]])).toBe(true);
+    expect(
+        canFinish(4, [
+            [1, 0],
+            [2, 1],
+            [3, 2],
+        ]),
+    ).toBe(true);
 });
 
 test("complex cycle — cannot finish", () => {
-    expect(canFinish(3, [[0, 1], [1, 2], [2, 0]])).toBe(false);
+    expect(
+        canFinish(3, [
+            [0, 1],
+            [1, 2],
+            [2, 0],
+        ]),
+    ).toBe(false);
 });

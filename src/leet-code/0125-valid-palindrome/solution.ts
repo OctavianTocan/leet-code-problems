@@ -29,8 +29,14 @@ export function isPalindrome(s: string): boolean {
     const isAlphaNum = (c: string) => /[a-z0-9]/i.test(c);
 
     while (left < right) {
-        if (!isAlphaNum(s[left]!)) { left++; continue; }
-        if (!isAlphaNum(s[right]!)) { right--; continue; }
+        if (!isAlphaNum(s[left]!)) {
+            left++;
+            continue;
+        }
+        if (!isAlphaNum(s[right]!)) {
+            right--;
+            continue;
+        }
 
         if (s[left]?.toLowerCase() !== s[right]?.toLowerCase()) return false;
 

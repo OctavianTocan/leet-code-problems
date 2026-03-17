@@ -37,9 +37,9 @@ export function findMedianSortedArrays(nums1: number[], nums2: number[]): number
         const mid2 = halfLength - mid1 - 2;
 
         const aLeft = mid1 >= 0 ? nums1[mid1]! : -Infinity;
-        const aRight = (mid1 + 1) < nums1.length ? nums1[mid1 + 1]! : Infinity;
+        const aRight = mid1 + 1 < nums1.length ? nums1[mid1 + 1]! : Infinity;
         const bLeft = mid2 >= 0 ? nums2[mid2]! : -Infinity;
-        const bRight = (mid2 + 1) < nums2.length ? nums2[mid2 + 1]! : Infinity;
+        const bRight = mid2 + 1 < nums2.length ? nums2[mid2 + 1]! : Infinity;
 
         if (aLeft <= bRight && bLeft <= aRight) {
             if (totalLength % 2 === 0) {
